@@ -25,7 +25,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 		CI: true
-
   build:
     runs-on: ubuntu-latest
     strategy:
