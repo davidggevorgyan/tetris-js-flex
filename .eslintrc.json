@@ -1,0 +1,40 @@
+{
+	"extends": "airbnb-base",
+	"env": {
+		"node": true,
+		"es6": true,
+		"jest": true,
+		"browser": true
+	},
+	"parser": "babel-eslint",
+	"rules": {
+		"indent": ["error", "tab"],
+		"import/extensions": ["error", "ignorePackages"],
+		"no-plusplus": [
+			"error",
+			{
+				"allowForLoopAfterthoughts": true
+			}
+		],
+		"no-tabs": [
+			"error",
+			{
+				"allowIndentationTabs": true
+			}
+		],
+		"padded-blocks": [
+			"error",
+			{
+				"classes": "always"
+			}
+		],
+		"space-in-parens": ["error", "always"],
+		"template-curly-spacing": ["error", "always"],
+		"no-underscore-dangle": [
+			"error",
+			{
+				"allowAfterThis": true
+			}
+		]
+	}
+}
