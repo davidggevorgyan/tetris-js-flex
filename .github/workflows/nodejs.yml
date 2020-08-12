@@ -1,4 +1,4 @@
-name: Tests
+name: Test and Deploy
 
 on:
   push:
@@ -21,17 +21,18 @@ jobs:
     - run: npm test -- --coverage
     - name: Running SonarCloudScan
       uses: sonarsource/sonarcloud-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-	CI: true
     - name: Install Packages
-    	run: npm run-script build
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - run: npm run-script build
     - name: Deploy to GH Pages
-        run: |
+    - run: |
           git config --global user.email "davidggevorrgyan@gmail.com"
           git config --global user.name "davidggevorgyan"
 	  git remote set-url origin https://davidggevorgyan:${{ secrets.ACTIONS_DEPLOY_KEY }}@github.com/davidggevorgyan/tetris-js-flex.git
-	  cp -r src/ dist
-	  cp -r assets/ dist
-          npx gh-pages -d dist
+
+    env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+	CI: true    	
