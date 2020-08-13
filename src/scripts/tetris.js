@@ -1,5 +1,6 @@
 import Field from './field.js';
 import Figure from './figure.js';
+import '../styles/tetris.css';
 
 const field = new Field( 20, 10 );
 field.renderField();

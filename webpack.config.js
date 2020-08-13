@@ -1,7 +1,13 @@
 const path = require( 'path' );
+const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
 
 module.exports = {
 	entry: './src/scripts/tetris.js',
+	plugins: [
+		new HtmlWebpackPlugin( {
+			template: 'src/index.html',
+		} ),
+	],
 	output: {
 		path: path.resolve( __dirname, 'dist' ),
 		filename: 'bundle.js',
@@ -17,6 +23,13 @@ module.exports = {
 						presets: ['@babel/preset-env'],
 					},
 				},
+			},
+			{
+				test: /\.css$/,
+				use: [
+					'style-loader',
+					'css-loader',
+				],
 			},
 		],
 	},
