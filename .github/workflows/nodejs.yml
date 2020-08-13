@@ -27,7 +27,7 @@ jobs:
           npm run-script build
           git config --global user.email "davidggevorrgyan@gmail.com"
           git config --global user.name "davidggevorgyan"
-          git remote set-url origin https://davidggevorgyan:${{ secrets.ACTIONS_DEPLOY_KEY }}@github.com/davidggevorgyan/todo-react.git
+          git remote set-url origin https://davidggevorgyan:${{ secrets.ACTIONS_DEPLOY_KEY }}@github.com/davidggevorgyan/tetris-js-flex.git
           npx gh-pages -d dist
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
