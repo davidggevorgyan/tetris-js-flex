@@ -1,6 +1,7 @@
 import Field from './field.js';
 import Figure from './figure.js';
 import '../styles/tetris.css';
+import Image from '../assets/favicon.png';
 
 const field = new Field( 20, 10 );
 field.renderField();
@@ -46,3 +47,4 @@ document.onkeydown = function keyListener( e ) {
 };
 
 document.querySelector( '#main' ).setAttribute( 'timerID', setInterval( move, 500 ) );
+document.querySelector( 'link' ).setAttribute( 'href', Image );
